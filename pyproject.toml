@@ -1,0 +1,105 @@
+[tool.black]
+line-length = 240
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vega-3d"
+version = "1.0.0"
+description = "VEGA-3D: Unleashing implicit 3D priors from generation models for scene understanding"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+[project.optional-dependencies]
+standalone = [
+    "shortuuid",
+    "httpx==0.24.0",
+    "einops",
+    "ftfy",
+]
+
+
+train = [
+    "llava[standalone]",
+    "numpy==1.26.1",
+    "open_clip_torch",
+    "fastapi",
+    "markdown2[all]",
+    "numpy",
+    "requests",
+    "sentencepiece",
+    "uvicorn",
+    "wandb",
+    "deepspeed==0.14.5",
+    "peft==0.13.2",
+    "accelerate==0.33.0",
+    "tokenizers==0.19.1",
+    "transformers==4.40.0",
+    "bitsandbytes==0.47.0",
+    "scikit-learn==1.2.2",
+    "sentencepiece~=0.1.99",
+    "einops==0.6.1",
+    "einops-exts==0.0.4",
+    "gradio_client==0.2.9",
+    "urllib3<=2.0.0",
+    "datasets==2.16.1",
+    "pydantic==1.10.8",
+    "timm",
+    "hf_transfer",
+    "opencv-python-headless",
+    "av",
+    "decord",
+    "tyro",
+    "scipy",
+    "imageio",
+    "ray",
+    "shortuuid",
+    "fasteners",
+    "torch_scatter==2.1.2",
+    "matplotlib",
+    "easydict",
+    "diffusers==0.30.3",
+    "fire",
+]
+
+
+[tool.setuptools.packages.find]
+include = ["llava*", "trl*"]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+]
+
+[tool.wheel]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+]

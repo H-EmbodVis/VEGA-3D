@@ -1,0 +1,13 @@
+*__pycache__*
+/data/
+/data
+/ckpt/
+/results/
+/wandb/
+<_io.TextIOWrapper name='results/
+.vscode/
+extract/
+video_3d_llm.egg-info/
+vega_3d.egg-info/
+core.*
+AGENTS.md
