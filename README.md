@@ -30,6 +30,14 @@ This work explores a different direction: instead of adding explicit 3D supervis
 
 - `2026.03.20`: Released the paper, training and evaluation code.
 
+## 📈 Performance
+
+<div align="center">
+  <a href="assets/performance.png">
+    <img src="assets/performance.png" alt="VEGA-3D performance" width="100%">
+  </a>
+</div>
+
 ## ⚙️ Installation
 
 1. Clone this repository and navigate to the VEGA-3D:
@@ -156,7 +164,7 @@ We build upon the following great works and open source repositories
 ## 📖 Citation
 If you find this repository useful in your research, please consider giving a star ⭐ and a citation.
 ```bibtex
-@article{fang2026towards,
+@article{wu2026vega,
       title={Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding},
       author={Xianjin Wu and Dingkang Liang and Tianrui Feng and Kui Xia and Yumeng Zhang and Xiaofan Li and Xiao Tan and Xiang Bai},
       journal={arXiv preprint arXiv:xxxx.xxxxx},
