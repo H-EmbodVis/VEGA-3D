@@ -1,13 +1,13 @@
 # Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding
 
 <div align="center">
-  <a href="https://arxiv.org/"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=Arxiv"></a>
+  <a href="https://arxiv.org/abs/2603.19235"><img src="https://img.shields.io/badge/arXiv-2603.19235-b31b1b?logo=Arxiv"></a>
   <a href="https://h-embodvis.github.io"><img src="https://img.shields.io/badge/Homepage-project-orange.svg?logo=googlehome"></a>
   <a href="https://huggingface.co/zd11024/Video3D-LLM-LLaVA-Qwen-Uniform-32" target="_blank"><img src="https://img.shields.io/badge/HuggingFace-Model-fcd022?logo=huggingface&logoColor=black"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square"></a>
 
-  <h5 align="center"><em><a href="https://github.com/HyperbolicCurve">Xianjin Wu</a><sup>1</sup>, <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1</sup>, <a href="https://jerryfeng2003.github.io/">Tianrui Feng</a><sup>1</sup>, Kui Xia<sup>2</sup>, Yumeng Zhang<sup>2</sup>, Xiaofan Li<sup>2</sup>, Xiao Tan<sup>2</sup>, <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup><sup>*</sup></em></h5>
-  <sup>1</sup> Huazhong University of Science and Technology, <sup>2</sup> Baidu Inc., China
+  <h5 align="center"><em><a href="https://github.com/HyperbolicCurve">Xianjin Wu</a><sup>1</sup>, <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1†</sup>, <a href="https://jerryfeng2003.github.io/">Tianrui Feng</a><sup>1</sup>, Kui Xia<sup>2</sup>, Yumeng Zhang<sup>2</sup>, Xiaofan Li<sup>2</sup>, Xiao Tan<sup>2</sup>, <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup></em></h5>
+  <sup>1</sup> Huazhong University of Science and Technology, <sup>2</sup> Baidu Inc., China，<sup>†</sup> Project Lead
 </div>
 
 This repository contains the official implementation of **VEGA-3D** for the paper **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding**.
@@ -167,7 +167,7 @@ If you find this repository useful in your research, please consider giving a st
 @article{wu2026vega,
       title={Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding},
       author={Xianjin Wu and Dingkang Liang and Tianrui Feng and Kui Xia and Yumeng Zhang and Xiaofan Li and Xiao Tan and Xiang Bai},
-      journal={arXiv preprint arXiv:xxxx.xxxxx},
+      journal={arXiv preprint arXiv:2603.19235},
       year={2026}
 }
 ```
