@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="VEGA-3D: Generation Models Know Space">
+  <meta name="description" content="VEGA-3D repurposes video generation models as latent world simulators for 3D scene understanding, spatial reasoning, and embodied manipulation.">
+  <meta name="theme-color" content="#0b2038">
+  <meta name="citation_title" content="Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding">
+  <meta name="citation_author" content="Wu, Xianjin">
+  <meta name="citation_author" content="Liang, Dingkang">
+  <meta name="citation_author" content="Feng, Tianrui">
+  <meta name="citation_author" content="Xia, Kui">
+  <meta name="citation_author" content="Zhang, Yumeng">
+  <meta name="citation_author" content="Li, Xiaofan">
+  <meta name="citation_author" content="Tan, Xiao">
+  <meta name="citation_author" content="Bai, Xiang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2603.19235">
+  <title>VEGA-3D | Generation Models Know Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">Top</button>
+
+  <header class="hero" id="top">
+    <div class="hero-orb orb-a"></div>
+    <div class="hero-orb orb-b"></div>
+    <div class="container">
+      <nav class="topbar">
+        <a class="brand" href="#top">VEGA-3D</a>
+        <div class="toplinks">
+          <a href="#method">Method</a>
+          <a href="#analysis">Analysis</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+
+      <div class="hero-copy">
+        <h1>Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding</h1>
+        <p class="hero-text">
+          VEGA-3D turns a frozen video generation model into a <strong>Latent World Simulator</strong>, extracting geometry-aware spatiotemporal priors and fusing them with semantic visual tokens for 3D scene understanding, spatial reasoning, and embodied manipulation.
+        </p>
+
+        <div class="authors">
+          <span><a href="https://github.com/HyperbolicCurve" target="_blank" rel="noreferrer">Xianjin Wu</a><sup>1</sup></span>
+          <span><a href="https://dk-liang.github.io/" target="_blank" rel="noreferrer">Dingkang Liang</a><sup>1, &dagger;</sup></span>
+          <span><a href="https://jerryfeng2003.github.io/" target="_blank" rel="noreferrer">Tianrui Feng</a><sup>1</sup></span>
+          <span>Kui Xia<sup>2</sup></span>
+          <span>Yumeng Zhang<sup>2</sup></span>
+          <span>Xiaofan Li<sup>2</sup></span>
+          <span>Xiao Tan<sup>2</sup></span>
+          <span><a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en" target="_blank" rel="noreferrer">Xiang Bai</a><sup>1</sup></span>
+        </div>
+
+        <p class="affiliations"><sup>1</sup> Huazhong University of Science and Technology <span class="dot"></span> <sup>2</sup> Baidu Inc., China <span class="dot"></span> <sup>&dagger;</sup> Project Lead</p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="https://arxiv.org/abs/2603.19235" target="_blank" rel="noreferrer">arXiv</a>
+          <a class="button" href="https://arxiv.org/pdf/2603.19235" target="_blank" rel="noreferrer">Paper</a>
+          <a class="button" href="https://github.com/H-EmbodVis/VEGA-3D" target="_blank" rel="noreferrer">Code</a>
+          <a class="button ghost" href="#results">See Results</a>
+        </div>
+      </div>
+
+      <figure class="hero-figure reveal">
+        <img src="static/images/intro.png" alt="VEGA-3D teaser overview">
+        <figcaption>
+          VEGA-3D avoids explicit 3D dependency and heavy geometric supervision by mining implicit spatial priors from large-scale video generation models.
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-copy reveal">
+          <div class="section-header">
+            <div class="section-tag">Abstract</div>
+            <h2 class="section-title abstract-title">A plug-and-play route to 3D awareness</h2>
+          </div>
+          <p class="lead abstract-lead">
+            Multimodal large language models are strong at semantics, but they still struggle with spatial blindness: fine-grained geometric reasoning, view-consistent localization, and physical dynamics. VEGA-3D starts from a different observation. If modern video generation models can synthesize coherent videos under camera motion and interaction, they must already encode robust 3D structure and motion priors.
+          </p>
+          <p class="lead abstract-lead">
+            We therefore repurpose a pretrained video diffusion model as a frozen latent world simulator, extract intermediate features at informative denoising stages, and align them with semantic visual tokens through adaptive gated fusion. This produces consistent gains across scene understanding, spatial reasoning, and robotic manipulation without requiring explicit 3D supervision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Method</div>
+          <h2 class="section-title">Video generation priors become a reusable visual signal</h2>
+        </div>
+
+        <div class="method-grid">
+          <article class="text-card reveal">
+            <div class="card-number">01</div>
+            <h3>3D Awareness Analysis</h3>
+            <p>We use multi-view correspondence to identify which backbones preserve physical geometry across changing viewpoints.</p>
+          </article>
+          <article class="text-card reveal">
+            <div class="card-number">02</div>
+            <h3>Latent World Simulator</h3>
+            <p>A frozen video diffusion model is queried at intermediate layers and mid-denoising steps, where geometry is strongest.</p>
+          </article>
+          <article class="text-card reveal">
+            <div class="card-number">03</div>
+            <h3>Adaptive Gated Fusion</h3>
+            <p>Generative and semantic token streams are projected into a shared space and fused with token-level dynamic gating.</p>
+          </article>
+        </div>
+
+        <div class="figure-grid two-col">
+          <figure class="figure-card span-two reveal">
+            <img src="static/images/pipeline.png" alt="VEGA-3D pipeline overview">
+            <figcaption><strong>Pipeline.</strong> VEGA-3D activates a frozen video generator as a latent world simulator and injects its internal 3D priors into the MLLM visual stream.</figcaption>
+          </figure>
+          <figure class="figure-card compact reveal">
+            <img src="static/images/fusion.png" alt="Adaptive gated fusion module">
+            <figcaption><strong>Fusion.</strong> Token-level adaptive gating balances semantic recognition cues and geometry-aware generative priors.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="analysis">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Analysis</div>
+          <h2 class="section-title">Why generative features help</h2>
+        </div>
+
+        <div class="figure-grid stacked">
+          <figure class="figure-card reveal">
+            <img src="static/images/consistency_vis.png" alt="Multi-view consistency and attention visualization">
+            <figcaption><strong>Implicit 3D priors.</strong> The generative backbone preserves multi-view consistency and sharpens localization for geometry-sensitive reasoning.</figcaption>
+          </figure>
+          <figure class="figure-card reveal">
+            <img src="static/images/comparison_corrspondence.png" alt="Feature-domain comparison and correspondence correlation">
+            <figcaption><strong>Correlation.</strong> Higher multi-view correspondence strongly tracks downstream 3D understanding performance.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Results</div>
+          <h2 class="section-title">Consistent gains across understanding, reasoning, and action</h2>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card reveal">
+            <div class="metric-value">56.2</div>
+            <div class="metric-name">ScanRefer Acc@0.5</div>
+            <div class="metric-delta">+4.5 over baseline</div>
+          </article>
+          <article class="metric-card reveal">
+            <div class="metric-value">55.1</div>
+            <div class="metric-name">Multi3DRefer F1@0.5</div>
+            <div class="metric-delta">+2.4 over baseline</div>
+          </article>
+          <article class="metric-card reveal">
+            <div class="metric-value">50.5</div>
+            <div class="metric-name">VSI-Bench Avg.</div>
+            <div class="metric-delta">+1.6 over baseline</div>
+          </article>
+          <article class="metric-card reveal">
+            <div class="metric-value">97.3%</div>
+            <div class="metric-name">LIBERO Avg. SR</div>
+            <div class="metric-delta">+0.3 over baseline</div>
+          </article>
+        </div>
+
+        <div class="domain-grid">
+          <article class="domain-card reveal">
+            <h3>3D scene understanding</h3>
+            <p>VEGA-3D gives the largest improvements on localization-centric tasks, where geometry acts as a strong spatial anchor for MLLMs.</p>
+          </article>
+          <article class="domain-card reveal">
+            <h3>Visual-spatial reasoning</h3>
+            <p>The same generative prior transfers to video-based reasoning tasks such as relative distance, direction, and appearance order.</p>
+          </article>
+          <article class="domain-card reveal">
+            <h3>Embodied manipulation</h3>
+            <p>Physical-world priors also help action models, improving robotic manipulation performance even in a saturated regime.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Qualitative Grounding</div>
+          <h2 class="section-title">Better localization in cluttered 3D scenes</h2>
+        </div>
+
+        <div class="figure-grid stacked">
+          <figure class="figure-card reveal">
+            <img src="static/images/ScanRefer_cases.png" alt="ScanRefer success cases">
+            <figcaption><strong>Success cases.</strong> VEGA-3D finds the correct object under fine-grained relational descriptions where the baseline drifts to semantically similar distractors.</figcaption>
+          </figure>
+          <figure class="figure-card reveal">
+            <img src="static/images/ScanRefer_failure_case.png" alt="ScanRefer failure cases">
+            <figcaption><strong>Failure cases.</strong> Hard scenes remain, but the comparison shows the remaining localization ambiguity is narrower than the baseline error pattern.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Spatial Reasoning</div>
+          <h2 class="section-title">Transfer beyond 3D benchmarks</h2>
+        </div>
+
+        <div class="figure-grid stacked">
+          <figure class="figure-card reveal">
+            <img src="static/images/vsibench_rel_distance.png" alt="VSI-Bench relative distance example">
+            <figcaption><strong>Relative distance.</strong> VEGA-3D better estimates distance-sensitive relationships across views.</figcaption>
+          </figure>
+          <figure class="figure-card reveal">
+            <img src="static/images/vsibench_rel_direction.png" alt="VSI-Bench relative direction example">
+            <figcaption><strong>Relative direction.</strong> Generative priors improve directional reasoning in egocentric spatial layouts.</figcaption>
+          </figure>
+          <figure class="figure-card reveal">
+            <img src="static/images/vsibench_appearance_order.png" alt="VSI-Bench appearance order example">
+            <figcaption><strong>Appearance order.</strong> The same representation also supports temporal ordering and dynamic scene understanding.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Efficiency and Ablation</div>
+          <h2 class="section-title">Mid-denoising features are the sweet spot</h2>
+        </div>
+
+        <div class="figure-grid stacked">
+          <figure class="figure-card reveal">
+            <img src="static/images/ablationv2.png" alt="Ablation on denoising step and layer depth">
+            <figcaption><strong>Ablation.</strong> Intermediate diffusion steps and selected internal layers consistently provide the most useful spatial priors.</figcaption>
+          </figure>
+          <figure class="figure-card reveal">
+            <img src="static/images/profiling.png" alt="Inference profiling with cached generative features">
+            <figcaption><strong>Profiling.</strong> Caching the generative branch per scene substantially reduces latency, memory, and FLOPs overhead.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container narrow reveal">
+        <div class="section-tag">Citation</div>
+        <h2 class="section-title">If you find VEGA-3D useful, please cite</h2>
+        <div class="citation-card">
+          <button class="copy-button" id="copyCitation" type="button" aria-label="Copy citation">Copy</button>
+          <pre class="bibtex"><code id="citationCode">@article{wu2026vega,
+  title   = {Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding},
+  author  = {Xianjin Wu and Dingkang Liang and Tianrui Feng and Kui Xia and Yumeng Zhang and Xiaofan Li and Xiao Tan and Xiang Bai},
+  journal = {arXiv preprint arXiv:2603.19235},
+  year    = {2026}
+}</code></pre>
+          <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>VEGA-3D</strong>
+        <p>Homepage branch for the project website.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="https://arxiv.org/abs/2603.19235" target="_blank" rel="noreferrer">arXiv</a>
+        <a href="https://github.com/H-EmbodVis/VEGA-3D" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/index.js"></script>
+</body>
+</html>
