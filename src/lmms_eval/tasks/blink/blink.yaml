@@ -1,0 +1,20 @@
+group: blink
+task:
+  - blink_art_style
+  - blink_functional_correspondence
+  - blink_multi_view_reasoning
+  - blink_relative_reflectance
+  - blink_visual_correspondence
+  - blink_counting
+  - blink_iq_test
+  - blink_object_localization
+  - blink_semantic_correspondence
+  - blink_visual_similarity
+  - blink_forensic_detection
+  - blink_jigsaw
+  - blink_relative_depth
+  - blink_spatial_relation
+test_split: val
+aggregate_metric_list:
+  - metric: blink_score
+    weight_by_size: False

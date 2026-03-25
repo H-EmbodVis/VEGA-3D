@@ -1,0 +1,3 @@
+task: blink_jigsaw
+dataset_name: Jigsaw
+include: src/lmms_eval/tasks/blink/blink_default_yaml

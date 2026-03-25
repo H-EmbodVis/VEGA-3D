@@ -1,0 +1,3 @@
+task: blink_counting
+dataset_name: Counting
+include: src/lmms_eval/tasks/blink/blink_default_yaml

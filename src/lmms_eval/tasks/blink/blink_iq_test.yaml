@@ -1,0 +1,3 @@
+task: blink_iq_test
+dataset_name: IQ_Test
+include: src/lmms_eval/tasks/blink/blink_default_yaml

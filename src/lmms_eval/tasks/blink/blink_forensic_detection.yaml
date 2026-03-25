@@ -1,0 +1,3 @@
+task: blink_forensic_detection
+dataset_name: Forensic_Detection
+include: src/lmms_eval/tasks/blink/blink_default_yaml

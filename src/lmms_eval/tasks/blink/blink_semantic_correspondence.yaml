@@ -1,0 +1,3 @@
+task: blink_semantic_correspondence
+dataset_name: Semantic_Correspondence
+include: src/lmms_eval/tasks/blink/blink_default_yaml

@@ -1,0 +1,3 @@
+task: blink_visual_correspondence
+dataset_name: Visual_Correspondence
+include: src/lmms_eval/tasks/blink/blink_default_yaml

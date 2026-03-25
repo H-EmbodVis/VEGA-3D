@@ -1,0 +1,3 @@
+task: blink_functional_correspondence
+dataset_name: Functional_Correspondence
+include: src/lmms_eval/tasks/blink/blink_default_yaml

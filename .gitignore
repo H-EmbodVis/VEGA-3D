@@ -1,0 +1,10 @@
+*cpython-310*
+*__pycache__
+*egg-info
+/data
+/data/
+multimodal_generative_encoder/
+ckpt/
+logs/
+AGENTS.md
+.github

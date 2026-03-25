@@ -1,0 +1,3 @@
+task: blink_spatial_relation
+dataset_name: Spatial_Relation
+include: src/lmms_eval/tasks/blink/blink_default_yaml

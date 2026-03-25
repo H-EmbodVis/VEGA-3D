@@ -1,0 +1,3 @@
+task: blink_art_style
+dataset_name: Art_Style
+include: src/lmms_eval/tasks/blink/blink_default_yaml
