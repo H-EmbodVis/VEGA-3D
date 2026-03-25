@@ -3,7 +3,7 @@
 <div align="center">
   <a href="https://arxiv.org/abs/2603.19235"><img src="https://img.shields.io/badge/arXiv-2603.19235-b31b1b?logo=Arxiv"></a>
   <a href="https://h-embodvis.github.io/VEGA-3D/"><img src="https://img.shields.io/badge/Homepage-project-orange.svg?logo=googlehome"></a>
-  <a href="https://huggingface.co/H-EmbodVis" target="_blank"><img src="https://img.shields.io/badge/HuggingFace-Model-fcd022?logo=huggingface&logoColor=white"></a>
+  <a href="https://huggingface.co/H-EmbodVis/VEGA-3D-Spatial-Reasoning" target="_blank"><img src="https://img.shields.io/badge/HuggingFace-Model(SR)-fcd022?logo=huggingface&logoColor=white"></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square"></a>
 
   <h5 align="center"><em><a href="https://github.com/HyperbolicCurve">Xianjin Wu</a><sup>1</sup>, <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1†</sup>, <a href="https://jerryfeng2003.github.io/">Tianrui Feng</a><sup>1</sup>, Kui Xia<sup>2</sup>, Yumeng Zhang<sup>2</sup>, Xiaofan Li<sup>2</sup>, Xiao Tan<sup>2</sup>, <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup></em></h5>
@@ -32,6 +32,7 @@ This work explores a different direction: instead of adding explicit 3D supervis
 
 ## 📣 News
 
+- `2026.03.25`: Released the training, evaluation code, and checkpoints for [spatial reasoning](https://github.com/H-EmbodVis/VEGA-3D/tree/spatial-reasoning).
 - `2026.03.20`: Released the paper, training and evaluation code.
 
 ## 📈 Performance
@@ -56,7 +57,10 @@ cd VEGA-3D
 conda create -n vega3d python=3.10 -y
 conda activate vega3d
 pip install --upgrade pip
+#In our implementation, we choose torch2.4.0+cu121
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
 pip install -e ".[train]"
+#In our implementation, we choose flash_attn==2.7.4.post1
 pip install flash-attn --no-build-isolation     # install flash attention
 ```
 
